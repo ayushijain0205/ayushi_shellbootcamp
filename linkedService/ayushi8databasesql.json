@@ -1,0 +1,12 @@
+{
+	"name": "ayushi8databasesql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=ayushi8server.database.windows.net;initial catalog=ayushi8database;user id=db08ayushi",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDdEMzg5OUM3LUYwNzQtNDIzQi1BQUVELURGOUMyNkQ1OTVDN185OTE3NDJmZS1mMTNhLTRiMjgtODRmNC1jMDRiOTE3MmE5NjUiDQp9"
+		}
+	}
+}
