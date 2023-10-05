@@ -1,0 +1,37 @@
+{
+	"name": "stores",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "oct5_AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "stores data-set.csv",
+				"folderPath": "RAW",
+				"container": "parent"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Store",
+				"type": "String"
+			},
+			{
+				"name": "Type",
+				"type": "String"
+			},
+			{
+				"name": "Size",
+				"type": "String"
+			}
+		]
+	}
+}

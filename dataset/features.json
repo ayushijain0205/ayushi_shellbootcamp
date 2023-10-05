@@ -1,0 +1,73 @@
+{
+	"name": "features",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "oct5_AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Features data set.csv",
+				"folderPath": "RAW",
+				"container": "parent"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Store",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Temperature",
+				"type": "String"
+			},
+			{
+				"name": "Fuel_Price",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown1",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown2",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown3",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown4",
+				"type": "String"
+			},
+			{
+				"name": "MarkDown5",
+				"type": "String"
+			},
+			{
+				"name": "CPI",
+				"type": "String"
+			},
+			{
+				"name": "Unemployment",
+				"type": "String"
+			},
+			{
+				"name": "IsHoliday",
+				"type": "String"
+			}
+		]
+	}
+}
