@@ -5,9 +5,17 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "features",
+						"type": "DatasetReference"
+					},
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "sales",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
 				}
 			],
@@ -15,21 +23,52 @@
 			"transformations": [
 				{
 					"name": "join1"
+				},
+				{
+					"name": "join2"
 				}
 			],
 			"scriptLines": [
 				"parameters{",
 				"     parameter1 as string",
 				"}",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2",
+				"source(output(",
+				"          Store as string,",
+				"          Date as string,",
+				"          Temperature as string,",
+				"          Fuel_Price as string,",
+				"          MarkDown1 as string,",
+				"          MarkDown2 as string,",
+				"          MarkDown3 as string,",
+				"          MarkDown4 as string,",
+				"          MarkDown5 as string,",
+				"          CPI as string,",
+				"          Unemployment as string,",
+				"          IsHoliday as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source(output(",
+				"          Store as string,",
+				"          Dept as string,",
+				"          Date as string,",
+				"          Weekly_Sales as string,",
+				"          IsHoliday as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
 				"source1 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join1"
+				"     broadcast: 'auto')~> join1",
+				"source2 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join2"
 			]
 		}
 	}
